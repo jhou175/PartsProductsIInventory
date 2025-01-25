@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="addProductAnchorPane" prefHeight="800.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.AddProductController">
+   <children>
+      <Pane fx:id="addProductPane" layoutX="50.0" layoutY="56.0" prefHeight="700.0" prefWidth="1000.0" style="-fx-border-color: black; -fx-border-radius: 15;">
+         <children>
+            <Label fx:id="AddProductPaneLabel" layoutX="50.0" layoutY="45.0" text="Add Product">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="idLbl" layoutX="80.0" layoutY="150.0" text="ID">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="idTxt" editable="false" layoutX="145.0" layoutY="150.0" prefHeight="30.0" prefWidth="150.0" promptText="Auto Gen-Disabled" />
+            <Label layoutX="80.0" layoutY="200.0" text="Name">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="nameTxt" layoutX="145.0" layoutY="200.0" prefHeight="30.0" prefWidth="150.0" />
+            <Label fx:id="invLbl" layoutX="80.0" layoutY="250.0" text="Inv">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="invTxt" layoutX="145.0" layoutY="250.0" prefHeight="30.0" prefWidth="75.0" />
+            <Label fx:id="priceLbl" layoutX="80.0" layoutY="300.0" text="Price">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="priceTxt" layoutX="145.0" layoutY="300.0" prefHeight="30.0" prefWidth="75.0" />
+            <Label fx:id="maxLbl" layoutX="80.0" layoutY="350.0" text="Max">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="maxTxt" layoutX="145.0" layoutY="350.0" prefHeight="30.0" prefWidth="75.0" />
+            <Label fx:id="minLbl" layoutX="248.0" layoutY="350.0" text="Min">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="minTxt" layoutX="294.0" layoutY="350.0" prefHeight="30.0" prefWidth="75.0" />
+            <TextField fx:id="productPartSearchTxt" layoutX="795.0" layoutY="45.0" onAction="#onProductPartSearch" prefHeight="30.0" prefWidth="175.0" promptText="Search by Part ID or Name" />
+            <TableView fx:id="topProductTable" layoutX="570.0" layoutY="85.0" prefHeight="200.0" prefWidth="400.0">
+               <columns>
+                  <TableColumn fx:id="topPartIDCol" prefWidth="75.0" text="Part ID" />
+                  <TableColumn fx:id="topPartNameCol" prefWidth="84.0" text="Part Name" />
+                  <TableColumn fx:id="topInvCol" prefWidth="112.0" text="Inventory Level " />
+                  <TableColumn fx:id="topPriceCostCol" prefWidth="128.0" text="Price/ Cost per Unit" />
+               </columns>
+            </TableView>
+            <Button fx:id="addButton" layoutX="861.0" layoutY="300.0" mnemonicParsing="false" onAction="#onAddAssociatedPart" text="Add">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <TableView fx:id="associatedPartsTable" layoutX="570.0" layoutY="357.0" prefHeight="200.0" prefWidth="400.0">
+               <columns>
+                  <TableColumn fx:id="AssociatedPartIDCol" prefWidth="75.0" text="Part ID" />
+                  <TableColumn fx:id="AssociatedPartNameCol" prefWidth="84.0" text="Part Name" />
+                  <TableColumn fx:id="AssociatedPartInvCol" prefWidth="112.0" text="Inventory Level " />
+                  <TableColumn fx:id="AssociatedPartPriceCostCol" prefWidth="128.0" text="Price/ Cost per Unit" />
+               </columns>
+            </TableView>
+            <Button fx:id="removePartButton" layoutX="770.0" layoutY="580.0" mnemonicParsing="false" onAction="#RemovePart" text="Remove Associated Part">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="saveButton" layoutX="770.0" layoutY="630.0" mnemonicParsing="false" onAction="#saveProduct" text="Save">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button layoutX="883.0" layoutY="630.0" mnemonicParsing="false" onAction="#cancelToMain" text="Cancel">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
